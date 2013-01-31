@@ -21,8 +21,13 @@ public class IntroToProgrammingCourse extends ProgrammingDegree {
         this.setCourseNumber(courseNumber);
     }
 
-    public String getCourseNumber() {
-        return courseNumber;
+    public final void setCourseName(String courseName) {
+        if (courseName == null || courseName.length() == 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: courseName cannot be null of empty string");
+            System.exit(0);
+        }
+        this.courseName = courseName;
     }
 
     public final void setCourseNumber(String courseNumber) {
@@ -34,10 +39,6 @@ public class IntroToProgrammingCourse extends ProgrammingDegree {
         this.courseNumber = courseNumber;
     }
 
-    public double getCredits() {
-        return credits;
-    }
-
     public void setCredits(double credits) {
         if (credits < 0.5 || credits > 4.0) {
             JOptionPane.showMessageDialog(null,
@@ -46,17 +47,15 @@ public class IntroToProgrammingCourse extends ProgrammingDegree {
         }
         this.credits = credits;
     }
+//    // Inherited methods, which are no longer needed here.
+//    public String getCourseName() {
+//        return courseName;
+//    }
+//    public String getCourseNumber() {
+//        return courseNumber;
+//    }
+//    public double getCredits() {
+//        return credits;
+//    }
 
-    public String getCourseName() {
-        return courseName;
-    }
-
-    public final void setCourseName(String courseName) {
-        if (courseName == null || courseName.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseName cannot be null of empty string");
-            System.exit(0);
-        }
-        this.courseName = courseName;
-    }
 }

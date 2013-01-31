@@ -19,16 +19,8 @@ public class IntroJavaCourse extends ProgrammingDegree {
         this.courseNumber = courseNumber;
     }
 
-    public String getCourseNumber() {
-        return courseNumber;
-    }
-
     public void setCourseNumber(String courseNumber) {
         this.courseNumber = courseNumber;
-    }
-
-    public double getCredits() {
-        return credits;
     }
 
     public String getPrerequisites() {
@@ -47,4 +39,13 @@ public class IntroJavaCourse extends ProgrammingDegree {
         }
         this.setCredits(credits);
     }
+    
+//    // Inherited methods, which are no longer needed here.
+//    public String getCourseNumber() {
+//        return courseNumber;
+//    }
+//    public double getCredits() {
+//        return credits;
+//    }
+
 }
