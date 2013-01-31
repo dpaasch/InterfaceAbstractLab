@@ -16,8 +16,13 @@ public class IntroJavaCourse extends ProgrammingDegree {
     private String prerequisites;
 
     public IntroJavaCourse(String courseName, String courseNumber) {
-        this.courseName = courseName;
-        this.courseNumber = courseNumber;
+        setCourseName(courseName);
+        setCourseNumber(courseNumber);
+//        // As these properties are now in the superclass, I cannot any longer
+//        // call these private properties.  Therefore, I am reverting to calling
+//        // the available set methods, and setting the properties as a parameter.
+//        this.courseName = courseName;
+//        this.courseNumber = courseNumber;
     }
 
     public String getPrerequisites() {
