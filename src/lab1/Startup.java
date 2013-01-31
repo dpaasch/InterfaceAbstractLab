@@ -1,5 +1,7 @@
 package lab1;
 
+import java.util.Scanner;
+
 /**
  * Describe responsibilities here. NOTE: this class has NO PREREQUISITES! Do not
  * change this fact.
@@ -9,4 +11,7 @@ package lab1;
  */
 public class Startup {
     
+    // Create a Scanner object for keyboard input.
+        Scanner input = new Scanner(System.in);
+
 }
