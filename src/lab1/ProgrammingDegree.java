@@ -1,5 +1,7 @@
 package lab1;
 
+import javax.swing.JOptionPane;
+
 /**
  * Describe responsibilities here. NOTE: this class has NO PREREQUISITES! Do not
  * change this fact.
@@ -18,7 +20,7 @@ public abstract class ProgrammingDegree {
     // These methods are common to each of the sub-classes.
     public String getCourseName() {
         return courseName;
-    }    
+    }
 
     public String getCourseNumber() {
         return courseNumber;
@@ -28,12 +30,32 @@ public abstract class ProgrammingDegree {
         return credits;
     }
 
-    // These methods are becoming abstract, as some sub-classes currently require
-    //validation.  Therefore, each sub-class can provide it's own implementation
-    // of this method.
-    public abstract void setCourseName(String courseName);
-    
-    public abstract void setCourseNumber(String courseNumber);
+    // These methods are becoming final.  This forces validation for each of 
+    // these methods.
+    public final void setCourseName(String courseName) {
+        if (courseName == null || courseName.length() == 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: courseName cannot be null of empty string");
+            System.exit(0);
+        }
+        this.courseName = courseName;
+    }
 
-    public abstract void setCredits(double credits);
+    public final void setCourseNumber(String courseNumber) {
+        if (courseNumber == null || courseNumber.length() == 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: courseNumber cannot be null of empty string");
+            System.exit(0);
+        }
+        this.courseNumber = courseNumber;
+    }
+
+    public final void setCredits(double credits) {
+        if (credits < 0 || credits > 5.0) {
+            System.out.println(
+                    "Error: credits must be in the range 0.5 to 4.0");
+            System.exit(0);
+        }
+        this.setCredits(credits);
+    }
 }

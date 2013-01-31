@@ -14,6 +14,7 @@ public class AdvancedJavaCourse extends ProgrammingDegree {
     // private String courseName;
     // private String courseNumber;
     // private double credits;
+
     private String prerequisites;
 
     public AdvancedJavaCourse(String courseName, String courseNumber) {
@@ -38,6 +39,14 @@ public class AdvancedJavaCourse extends ProgrammingDegree {
         this.prerequisites = prerequisites;
     }
 
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public void setCourseNumber(String courseNumber) {
+        this.courseNumber = courseNumber;
+    }
+
     public void setCredits(double credits) {
         if (credits < 0.5 || credits > 4.0) {
             JOptionPane.showMessageDialog(null,
@@ -46,22 +55,14 @@ public class AdvancedJavaCourse extends ProgrammingDegree {
         }
         this.setCredits(credits);
     }
-
-    // Moving these methods to the superclass, as they are common among each
-    // of the sub-classes.  Thus, they will become inherited.
-    public String getCourseName() {
-        return courseName;
-    }
-
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
-    }
-
-    public String getCourseNumber() {
-        return courseNumber;
-    }
-
-    public void setCourseNumber(String courseNumber) {
-        this.courseNumber = courseNumber;
-    }
+//    // Inherited methods, which are no longer needed here.
+//    public String getCourseName() {
+//        return courseName;
+//    }
+//    public String getCourseNumber() {
+//        return courseNumber;
+//    }
+//    public double getCredits() {
+//        return credits;
+//    }
 }
