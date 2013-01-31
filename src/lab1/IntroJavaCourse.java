@@ -3,11 +3,11 @@ package lab1;
 /**
  * Describe responsibilities here.
  *
- * @author      your name goes here
+ * @author      Dawn Bykowski
  * @version     1.00
  */
-public class IntroJavaCourse {
-    String courseName;
+public class IntroJavaCourse extends ProgrammingDegree{
+    private String courseName;
     private String courseNumber;
     private double credits;
     private String prerequisites;

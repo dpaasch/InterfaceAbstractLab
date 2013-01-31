@@ -6,10 +6,10 @@ import javax.swing.JOptionPane;
  * Describe responsibilities here. NOTE: this class has NO PREREQUISITES!
  * Do not change this fact.
  *
- * @author      your name goes here
+ * @author      Dawn Bykowski
  * @version     1.00
  */
-public class IntroToProgrammingCourse {
+public class IntroToProgrammingCourse extends ProgrammingDegree{
     private String courseName;
     private String courseNumber;
     private double credits;

@@ -5,11 +5,11 @@ import javax.swing.JOptionPane;
 /**
  * Describe responsibilities here.
  *
- * @author      your name goes here
+ * @author      Dawn Bykowski
  * @version     1.00
  */
-public class AdvancedJavaCourse {
-    String courseName;
+public class AdvancedJavaCourse extends ProgrammingDegree{
+    private String courseName;
     private String courseNumber;
     private double credits;
     private String prerequisites;
