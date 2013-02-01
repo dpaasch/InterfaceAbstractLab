@@ -41,7 +41,7 @@ public class IntroJavaCourse extends ProgrammingDegree {
  * private double credits;
  * 
  * 2) As these properties are now in the superclass, I cannot any longer call 
- * these private properties.   
+ * these private properties from the constructor.   
  * this.courseName = courseName;
  * this.courseNumber = courseNumber;
  * Therefore, I had changed them to call the applicable set methods (see below), 

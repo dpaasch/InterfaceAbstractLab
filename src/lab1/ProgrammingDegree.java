@@ -16,7 +16,14 @@ public abstract class ProgrammingDegree {
     private String courseName;
     private String courseNumber;
     private double credits;
-
+  
+    // Constructor that accepts as arguments the courseName and courseNumber for
+    // each offered class.
+    public ProgrammingDegree(String cName, String cNumber) {
+        courseName = cName;
+        courseNumber = cNumber;
+    }
+    
     // Constructor that accepts as arguments the courseName, courseNumber, and
     // credits for each offered class.
     public ProgrammingDegree(String cName, String cNumber, Double c) {
@@ -25,11 +32,8 @@ public abstract class ProgrammingDegree {
         credits = c;
     }
     
-    // Constructor that accepts as arguments the courseName and courseNumber for
-    // each offered class.
-    public ProgrammingDegree(String cName, String cNumber) {
-        courseName = cName;
-        courseNumber = cNumber;
+    public ProgrammingDegree(){
+        
     }
     
     // These methods are common to each of the sub-classes.
