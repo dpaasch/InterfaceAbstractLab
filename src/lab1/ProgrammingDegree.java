@@ -15,7 +15,6 @@ public abstract class ProgrammingDegree {
     // not to duplicate efforts.
     private String courseName;
     private String courseNumber;
-    private double credits;
   
     // Constructor that accepts as arguments the courseName and courseNumber for
     // each offered class.
@@ -23,34 +22,18 @@ public abstract class ProgrammingDegree {
         courseName = cName;
         courseNumber = cNumber;
     }
-    
-    // Constructor that accepts as arguments the courseName, courseNumber, and
-    // credits for each offered class.
-    public ProgrammingDegree(String cName, String cNumber, Double c) {
-        courseName = cName;
-        courseNumber = cNumber;
-        credits = c;
-    }
-    
-    public ProgrammingDegree(){
-        
-    }
-    
+   
     // These methods are common to each of the sub-classes.
     public String getCourseName() {
         return courseName;
     }
-
-    public String getCourseNumber() {
-        return courseNumber;
-    }
-
-    public double getCredits() {
-        return credits;
-    }
+//
+//    public String getCourseNumber() {
+//        return courseNumber;
+//    }
 
     // These methods are becoming final.  This forces validation for each of 
-    // these methods.
+    // these methods, as they are the same in all three sub-classes.
     public final void setCourseName(String courseName) {
         if (courseName == null || courseName.length() == 0) {
             JOptionPane.showMessageDialog(null,
@@ -72,4 +55,14 @@ public abstract class ProgrammingDegree {
     // Changing this to an abstract method, so each sub-class can set their
     // own requirements for the validation.
     public abstract void setCredits(double credits);
+    
+    // Method: toString() shows the state of the object
+    @Override
+    public String toString() {
+        String string;
+        
+        string = "Course Name: " + courseName
+                + "\nCourse Number: " + courseNumber;
+        return string;      
+    }
 }

@@ -8,6 +8,7 @@ package lab1;
  */
 public class IntroJavaCourse extends ProgrammingDegree {
 
+    private double credits;
     private String prerequisites;
 
     public IntroJavaCourse(String courseName, String courseNumber) {
@@ -28,7 +29,19 @@ public class IntroJavaCourse extends ProgrammingDegree {
                     "Error: credits must be in the range 0.5 to 4.0");
             System.exit(0);
         }
-        this.setCredits(credits);
+        this.credits = credits;
+    }
+    
+    // Method: toString() shows the state of the object
+    @Override
+    public String toString() {
+        String introJavaString;
+        
+        introJavaString = super.toString()
+                + "\n IntroJava Credits: " + credits
+                + "\n IntroJavaCourse Prerequisites: " + prerequisites
+                + "\n";
+        return introJavaString;      
     }
 }
 /**
@@ -38,7 +51,6 @@ public class IntroJavaCourse extends ProgrammingDegree {
  * the sub-classes.
  * private String courseName;
  * private String courseNumber;
- * private double credits;
  * 
  * 2) As these properties are now in the superclass, I cannot any longer call 
  * these private properties from the constructor.   

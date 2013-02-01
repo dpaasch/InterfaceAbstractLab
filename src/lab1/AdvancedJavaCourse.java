@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
  * @version 1.00
  */
 public class AdvancedJavaCourse extends ProgrammingDegree {
-
+    private double credits;
     private String prerequisites;
 
     public AdvancedJavaCourse(String courseName, String courseNumber) {
@@ -17,7 +17,7 @@ public class AdvancedJavaCourse extends ProgrammingDegree {
     }
 
     public String getCapitalizedCourseName() {
-        return this.getCourseName().toUpperCase();
+        return getCourseName().toUpperCase();
     }
         
     public void setCredits(double credits) {
@@ -26,7 +26,7 @@ public class AdvancedJavaCourse extends ProgrammingDegree {
                     "Error: credits must be in the range 0.5 to 4.0");
             System.exit(0);
         }
-        this.setCredits(credits);
+        this.credits = credits;
     }
 
     public String getPrerequisites() {
@@ -41,6 +41,18 @@ public class AdvancedJavaCourse extends ProgrammingDegree {
         }
         this.prerequisites = prerequisites;
     }
+    
+    // Method: toString() shows the state of the object
+    @Override
+    public String toString() {
+        String advancedJavaString;
+        
+        advancedJavaString = super.toString()
+                + "\n AdvancedJava Credits: " + credits
+                + "\n AdvancedJavaCourse Prerequisites: " + prerequisites
+                + "\n";
+        return advancedJavaString;      
+    }
 }
 
 /**
@@ -50,7 +62,6 @@ public class AdvancedJavaCourse extends ProgrammingDegree {
  * the sub-classes.
  * private String courseName;
  * private String courseNumber;
- * private double credits;
  * 
  * 2) As these private properties are now in the superclass, I have decided to
  * call the superclass constructor to populate this constructor.  Therefore, 

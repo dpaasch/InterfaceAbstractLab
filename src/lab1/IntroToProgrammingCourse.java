@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
  */
 public class IntroToProgrammingCourse extends ProgrammingDegree {
 
+    private double credits;
+    
     public IntroToProgrammingCourse(String courseName, String courseNumber) {
         super(courseName, courseNumber);
     }
@@ -21,9 +23,19 @@ public class IntroToProgrammingCourse extends ProgrammingDegree {
                     "Error: credits must be in the range 0.5 to 4.0");
             System.exit(0);
         }
-        // Changing this to the setCredits method: this.credits = credits;
-        setCredits(credits);
+        this.credits = credits;
     } 
+    
+    // Method: toString() shows the state of the object
+    @Override
+    public String toString() {
+        String introToProgrammingString;
+        
+        introToProgrammingString = super.toString()
+                + "\n IntroToProgramming Credits: " + credits
+                + "\n";
+        return introToProgrammingString;      
+    }
 }
 /**
  * Have made the following changes within this sub-class to clean-up/simplify
@@ -32,7 +44,6 @@ public class IntroToProgrammingCourse extends ProgrammingDegree {
  * the sub-classes.
  * private String courseName;
  * private String courseNumber;
- * private double credits;
  * 
  * 2) As these private properties are now in the superclass, I have decided to
  * call the superclass constructor to populate this constructor.  Therefore, 
