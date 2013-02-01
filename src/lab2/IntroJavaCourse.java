@@ -3,7 +3,7 @@ package lab2;
 /**
  * Describe responsibilities here.
  *
- * @author      your name goes here
+ * @author      Dawn Bykowski
  * @version     1.00
  */
 public class IntroJavaCourse {
