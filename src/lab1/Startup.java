@@ -11,7 +11,10 @@ import java.util.Scanner;
  */
 public class Startup {
     
+    public static void main(String[] args){
     // Create a Scanner object for keyboard input.
         Scanner input = new Scanner(System.in);
-
+        
+        
+    }
 }
