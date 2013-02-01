@@ -7,22 +7,11 @@ package lab1;
  * @version 1.00
  */
 public class IntroJavaCourse extends ProgrammingDegree {
-    // Moving these properties to the superclass, as they are common among each
-    // of the sub-classes.
-    // private String courseName;
-    // private String courseNumber;
-    // private double credits;
 
     private String prerequisites;
 
     public IntroJavaCourse(String courseName, String courseNumber) {
-        setCourseName(courseName);
-        setCourseNumber(courseNumber);
-//        // As these properties are now in the superclass, I cannot any longer
-//        // call these private properties.  Therefore, I am reverting to calling
-//        // the available set methods, and setting the properties as a parameter.
-//        this.courseName = courseName;
-//        this.courseNumber = courseNumber;
+        super(courseName, courseNumber);
     }
 
     public String getPrerequisites() {
@@ -33,24 +22,44 @@ public class IntroJavaCourse extends ProgrammingDegree {
         this.prerequisites = prerequisites;
     }
 
-//    // Inherited methods, which are no longer needed here.
-//    public String getCourseNumber() {
-//        return courseNumber;
-//    }
-    
-//    public void setCourseNumber(String courseNumber) {
-//        this.courseNumber = courseNumber;
-//    }
-    
-//    public double getCredits() {
-//        return credits;
-//    }
-//    public void setCredits(double credits) {
-//        if (credits < 0 || credits > 5.0) {
-//            System.out.println(
-//                    "Error: credits must be in the range 0.5 to 4.0");
-//            System.exit(0);
-//        }
-//        this.setCredits(credits);
-//    }
+    public void setCredits(double credits) {
+        if (credits < 0 || credits > 5.0) {
+            System.out.println(
+                    "Error: credits must be in the range 0.5 to 4.0");
+            System.exit(0);
+        }
+        this.setCredits(credits);
+    }
 }
+/**
+ * Have made the following changes within this sub-class to clean-up/simplify
+ * the code:
+ * 1) Moved these properties to the superclass, as they are common among each of 
+ * the sub-classes.
+ * private String courseName;
+ * private String courseNumber;
+ * private double credits;
+ * 
+ * 2) As these properties are now in the superclass, I cannot any longer call 
+ * these private properties.   
+ * this.courseName = courseName;
+ * this.courseNumber = courseNumber;
+ * Therefore, I had changed them to call the applicable set methods (see below), 
+ * until I realized that calling the superclass to load the constructor properties 
+ * was a better path forward.
+ * setCourseName(courseName);
+ * setCourseNumber(courseNumber);
+ * 
+ * 3) These are now inherited methods, so they are no longer required here.
+ * public String getCourseNumber() {
+ * return courseNumber;
+ * }
+ * 
+ * public void setCourseNumber(String courseNumber) {
+ * this.courseNumber = courseNumber;
+ * }
+ * 
+ * public double getCredits() {
+ * return credits;
+ * }
+ */

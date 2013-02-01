@@ -25,6 +25,13 @@ public abstract class ProgrammingDegree {
         credits = c;
     }
     
+    // Constructor that accepts as arguments the courseName and courseNumber for
+    // each offered class.
+    public ProgrammingDegree(String cName, String cNumber) {
+        courseName = cName;
+        courseNumber = cNumber;
+    }
+    
     // These methods are common to each of the sub-classes.
     public String getCourseName() {
         return courseName;
@@ -58,12 +65,7 @@ public abstract class ProgrammingDegree {
         this.courseNumber = courseNumber;
     }
 
-    public final void setCredits(double credits) {
-        if (credits < 0 || credits > 5.0) {
-            System.out.println(
-                    "Error: credits must be in the range 0.5 to 4.0");
-            System.exit(0);
-        }
-        this.setCredits(credits);
-    }
+    // Changing this to an abstract method, so each sub-class can set their
+    // own requirements for the validation.
+    public abstract void setCredits(double credits);
 }
