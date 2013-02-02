@@ -70,4 +70,17 @@ public class AdvancedJavaCourse implements ProgrammingDegree {
         }
         this.prerequisites = prerequisites;
     }
+    
+    // Adding toString() method, to show the output of this object.
+    @Override
+    public String toString() {
+        String advancedJavaString;
+        
+        advancedJavaString = "Course Name: " + courseName
+                + "\nCourse Number: " + courseNumber
+                + "\nCredits: " + credits
+                + "\nPrerequisites: " + prerequisites
+                + "\n";
+        return advancedJavaString;      
+    }
 }

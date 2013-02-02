@@ -6,7 +6,7 @@ package lab2;
  * @author      Dawn Bykowski
  * @version     1.00
  */
-public class IntroJavaCourse {
+public class IntroJavaCourse implements ProgrammingDegree {
     private String courseName;
     private String courseNumber;
     private double credits;
@@ -17,6 +17,13 @@ public class IntroJavaCourse {
         this.courseNumber = courseNumber;
     }
 
+    // Implemented this method, as it is inherited from the interface and I
+    // believe it should have been here to begin with, as the courseName property
+    // is required as part of the constructor.
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+    
     public String getCourseNumber() {
         return courseNumber;
     }
@@ -40,4 +47,6 @@ public class IntroJavaCourse {
     public void setPrerequisites(String prerequisites) {
         this.prerequisites = prerequisites;
     }
+
+
 }
