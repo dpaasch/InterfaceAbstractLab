@@ -48,5 +48,16 @@ public class IntroJavaCourse implements ProgrammingDegree {
         this.prerequisites = prerequisites;
     }
 
-
+    // Adding toString() method, to show the output of this object.
+    @Override
+    public String toString() {
+        String introJavaString;
+        
+        introJavaString = "Course Name: " + courseName
+                + "\nCourse Number: " + courseNumber
+                + "\nCredits: " + credits
+                + "\nPrerequisites: " + prerequisites
+                + "\n";
+        return introJavaString;      
+    }
 }

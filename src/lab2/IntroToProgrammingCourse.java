@@ -57,4 +57,16 @@ public class IntroToProgrammingCourse implements ProgrammingDegree {
         }
         this.credits = credits;
     }
+
+    // Adding toString() method, to show the output of this object.
+    @Override
+    public String toString() {
+        String introToProgrammingString;
+
+        introToProgrammingString = "Course Name: " + courseName
+                + "\nCourse Number: " + courseNumber
+                + "\nCredits: " + credits
+                + "\n";
+        return introToProgrammingString;
+    }
 }
