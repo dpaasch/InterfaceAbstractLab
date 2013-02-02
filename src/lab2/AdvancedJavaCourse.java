@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  * @author      Dawn Bykowski
  * @version     1.00
  */
-public class AdvancedJavaCourse {
+public class AdvancedJavaCourse implements ProgrammingDegree {
     private String courseName;
     private String courseNumber;
     private double credits;
@@ -19,6 +19,19 @@ public class AdvancedJavaCourse {
         this.setCourseNumber(courseNumber);
     }
 
+        public String getCourseName() {
+        return courseName;
+    }
+
+    public final void setCourseName(String courseName) {
+        if(courseName == null || courseName.length() == 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: courseName cannot be null of empty string");
+            System.exit(0);
+        }
+        this.courseName = courseName;
+    }  
+    
     public String getCourseNumber() {
         return courseNumber;
     }
@@ -57,19 +70,4 @@ public class AdvancedJavaCourse {
         }
         this.prerequisites = prerequisites;
     }
-
-    public String getCourseName() {
-        return courseName;
-    }
-
-    public final void setCourseName(String courseName) {
-        if(courseName == null || courseName.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseName cannot be null of empty string");
-            System.exit(0);
-        }
-        this.courseName = courseName;
-    }
-
-    
 }
