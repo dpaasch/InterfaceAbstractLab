@@ -1,7 +1,21 @@
 package lab2;
 
 /**
- * Describe responsibilities here.
+ * I personally cannot think of a better way to improve on this design.  Using
+ * an interface as superclass, has improved the design from lab #1.  The common 
+ * properties, unfortunately, were left within each sub-class.  I considered
+ * moving the common properties to IntroToProgrammingCourse, and making it
+ * abstract, but the two other sub-classes did not have an "IS-A" relationship
+ * with the IntroToProgrammingCourse.  Therefore, I was unable to consciously
+ * make this change.  It may have been better to have an additional class that
+ * could have been abstract, that would have incorporated all common properties 
+ * and would have been a better way to simplify the sub-classes.  Then the sub-
+ * classes could have inherited these.  Liskov's Substitution principle could 
+ * possibly have been used in this scenario.  Unfortunately, I am still not 100%
+ * comfortable with interfaces and abstract to fully understand how I could have
+ * fully implemented Liskov's Substitution here.  I am hoping that by the
+ * time I complete Lab #3, I will have a better understanding.  Note - Please see 
+ * additional comments at the bottom of each sub-class.
  *
  * @author      Dawn Bykowski
  * @version     1.00
