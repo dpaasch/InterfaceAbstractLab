@@ -23,6 +23,10 @@ public class IntroJavaCourse extends ProgrammingDegree {
         this.prerequisites = prerequisites;
     }
 
+    public double getCredits() {
+        return credits;
+    }
+    
     public void setCredits(double credits) {
         if (credits < 0 || credits > 5.0) {
             System.out.println(
