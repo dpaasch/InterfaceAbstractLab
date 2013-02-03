@@ -1,7 +1,5 @@
 package lab1;
 
-import java.util.Scanner;
-
 /**
  * I personally cannot think of a better way to improve on this design.  I did 
  * not have to re-implement any of the methods, and did not have to re-
@@ -14,7 +12,8 @@ import java.util.Scanner;
  * I received errors with the setPrerequisites() method for both the AdvancedJavaCourse
  * object and for the IntroJavaCourse object.  It would be advantageous to declare
  * a variable using it's abstract type when all the properties required are found
- * within the superclass.
+ * within the superclass.  Note - Please see additional comments at the bottom
+ * of each sub-class.
  *
  * @author Dawn Bykowski
  * @version 1.00
