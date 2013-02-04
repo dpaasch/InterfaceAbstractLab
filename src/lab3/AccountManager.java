@@ -29,7 +29,9 @@ public abstract class AccountManager {
     // Method: toString() shows the state of the object
     @Override
     public String toString() {
-        String accountManagerString = "Account ID: " + accountID
+        String accountManagerString = "\n\n\n"
+                + "**********ACCOUNT INFORMATION**********"
+                + "\nAccount ID: " + accountID
                 + "\nAccount Last Name: " + lastName
                 + "\nAccount First Name: " + firstName;
         return accountManagerString;      
