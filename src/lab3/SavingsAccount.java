@@ -14,23 +14,23 @@ public class SavingsAccount extends BankAccount {
 
     // Constructor:
     public SavingsAccount(int accountID, String lastName,
-            String firstName, double accountBalance, Account account) {
-        super(accountID, lastName, firstName, accountBalance, account);
+            String firstName, double accountBalance) {
+        super(accountID, lastName, firstName, accountBalance);
     }
 
-    // payInterest() method sets the interest rate for the account
-    public void payInterest() {
-        double newBalance =
-                this.getAccountBalance() * (1 + (this.getInterestRate() / 100));
-        if (this.getAccountBalance() >= this.minimumBalance) {
-            this.setAccountBalance(newBalance);
+    // calcInterest() method sets the interest rate for the account
+    public void calcInterest() {
+        if (minimumBalance < 100.00) {
+            System.out.println("You have earned no interest.");
+        } else {
+           setAccountBalance (getAccountBalance() * .05);
         }
     }
 
     @Override
     public String toString() {
         return super.toString()
-                + "\n  Savings Interest Rate " + this.getInterestRate()
-                + "\n  Savings Minimum balance " + this.minimumBalance;
+                + "\n  Savings Interest Earned" + this.getAccountBalance()
+                + "\n  Savings Minimum Balance " + minimumBalance;
     }
 }

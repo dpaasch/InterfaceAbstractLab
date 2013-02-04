@@ -1,15 +1,17 @@
 package lab3;
 
+import java.text.DecimalFormat;
+
 /**
  * Which super classes should be concrete vs. abstract vs. Interface? Justify
  * your choices by adding comments to each class. This super class contains
- * actions that will perform all the actions found within the Account interface,
- * therefore this class will be declared as a concrete class rather than an
+ * actions that will not perform all the actions found within the Account interface,
+ * therefore this class will be declared as an abstract class rather than an
  * abstract class.
  *
  * @author Dawn Bykowski
  */
-public class BankAccount extends AccountManager implements Account {
+public abstract class BankAccount implements Account {
 
     // BankAccount properties: These properties will be shared with the savings 
     // account class and will only be declared within this super class.
@@ -21,8 +23,7 @@ public class BankAccount extends AccountManager implements Account {
 
     // Constructor calls the abstract superclass constructor.
     public BankAccount(int accountID, String lastName, String firstName,
-            double accountBalance, Account account) {
-        super(account);
+            double accountBalance) {
         this.accountID = accountID;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -34,12 +35,12 @@ public class BankAccount extends AccountManager implements Account {
     // Setting the deposit and withdrawl methods to final, so they cannot be
     // overridden within the SavingsAccount sub-class.
     public final void deposit(double amount) {
-        accountBalance = accountBalance + amount;
+        accountBalance += amount;
     }
 
     public void withdrawl(double amount) {
         if (amount < this.getAccountBalance()) {
-            this.setAccountBalance(this.getAccountBalance() - amount);
+            accountBalance -= amount;
         } else {
             System.out.println("Error. You do not have sufficient funds for this"
                     + " transaction.");
@@ -54,7 +55,7 @@ public class BankAccount extends AccountManager implements Account {
                 + "\n Account ID: \t" + accountID
                 + "\n Last Name: \t" + lastName
                 + "\n First Name: \t" + firstName
-                + "\n Accoutn Balance: \t" + accountBalance;
+                + "\n Account Balance: \t" + accountBalance;
         return BankAccountString;
     }
 
@@ -94,13 +95,5 @@ public class BankAccount extends AccountManager implements Account {
         } else {
             System.out.println("Error. Balance cannot be a negative number.");
         }
-    }
-
-    public double getInterestRate() {
-        return interestRate;
-    }
-
-    public void setInterestRate(double interestRate) {
-        BankAccount.interestRate = interestRate;
     }
 }
