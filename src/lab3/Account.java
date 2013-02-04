@@ -11,9 +11,9 @@ package lab3;
  * @author Dawn Bykowski
  */
 public interface Account {
-    
+   
+   // These methods will be required for any banking accounts
    public void withdrawl(double amount);
    public void deposit(double amount);
-   public int getAccountID();
     
 }

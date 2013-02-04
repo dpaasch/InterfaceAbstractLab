@@ -1,38 +1,45 @@
 package lab3;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
- * After re-reading the DIP document, I am still struggling as to how
+ * 
  *
- * @author      Dawn Bykowski
- * @version     1.00
+ * @author Dawn Bykowski
+ * @version 1.00
  */
 public class Startup {
-    
+
     public static void main(String[] args) {
-        
+        double minBalance = 50.00;
+        double currentBalance = 5000.00;
+        int acctNum = 47899;
+        String lastName = "Meyers";
+        String firstName = "Susan";
+
         // Create scanner object to hold the user input
         Scanner input = new Scanner(System.in);
+        
+        // Create a SavingsAccount object
+        BankAccount savingsAccount =
+                new SavingsAccount(minBalance, currentBalance, acctNum, lastName, 
+                firstName);
 
-        // Request the annual interest rate, the starting balance, and the 
-        // number of months that have passed since the account was established.
-        System.out.println("Enter the amount of the Deposit.");
-        double amount = input.nextDouble();
-        System.out.println("Enter the amount of the Withdrawl.");
-         amount = input.nextDouble();
-        
-        // Create a BankAccount object
-        BankAccount savingsAccount = new SavingsAccount(321, "Bykowski", "Dawn", 5000.00);
-        
-        savingsAccount.setAccountID(555);
-        savingsAccount.setLastName("Bykowski");
-        savingsAccount.setFirstName("Dawn");
-        savingsAccount.setAccountBalance(5000.00);
-        savingsAccount.deposit(amount);
-        savingsAccount.withdrawl(amount);
+        System.out.println("Enter deposit amount: ");
+        double dAmount = input.nextDouble();
+        savingsAccount.deposit(dAmount);
+        savingsAccount.getAccountBalance();
+        System.out.println("Current balance after deposit: " 
+                + savingsAccount.getAccountBalance());
+
+        System.out.println("Enter withdrawal amount: ");
+        double wAmount= input.nextDouble();
+        savingsAccount.withdrawl(wAmount);
+        savingsAccount.getAccountBalance();
+        System.out.println("Current balance after withdrawl: "
+                + savingsAccount.getAccountBalance());
+
         System.out.println(savingsAccount);
-
     }
-        
 }

@@ -5,9 +5,9 @@ import java.text.DecimalFormat;
 /**
  * Which super classes should be concrete vs. abstract vs. Interface? Justify
  * your choices by adding comments to each class. This super class contains
- * actions that will not perform all the actions found within the Account interface,
- * therefore this class will be declared as an abstract class rather than an
- * abstract class.
+ * actions that will not perform all the actions found within the Account
+ * interface, therefore this class will be declared as an abstract class rather
+ * than an abstract class.
  *
  * @author Dawn Bykowski
  */
@@ -16,9 +16,9 @@ public abstract class BankAccount extends AccountManager implements Account {
     // These properties will be inherited by the sub-classes and will be defined
     // here.
     private double accountBalance;          // acount balance
-    private static double interestRate;     // interest rate
 
-    // Constructor calls the abstract superclass constructor.
+    // Constructor calls the abstract superclass constructor.  Not including
+    // the interestEarned, as this should be calculated.
     public BankAccount(double accountBalance, int accountID, String lastName, 
             String firstName) {
         super(accountID, lastName, firstName);
@@ -42,42 +42,6 @@ public abstract class BankAccount extends AccountManager implements Account {
         }
     }
 
-    // Method: toString() shows the state of the object
-    @Override
-    public String toString() {
-
-        String BankAccountString = super.toString()
-                + "\n Account ID: \t" + accountID
-                + "\n Last Name: \t" + lastName
-                + "\n First Name: \t" + firstName
-                + "\n Account Balance: \t" + accountBalance;
-        return BankAccountString;
-    }
-
-    public int getAccountID() {
-        return accountID;
-    }
-
-    public void setAccountID(int accountID) {
-        this.accountID = accountID;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public double getAccountBalance() {
         return accountBalance;
     }
@@ -91,4 +55,14 @@ public abstract class BankAccount extends AccountManager implements Account {
             System.out.println("Error. Balance cannot be a negative number.");
         }
     }
+
+    // Method: toString() shows the state of the object
+    @Override
+    public String toString() {
+
+        String BankAccountString = super.toString()
+                + "\n Account Balance: " + accountBalance;
+        return BankAccountString;
+    }
+ 
 }
