@@ -9,7 +9,7 @@ package lab3;
  *
  * @author Dawn Bykowski
  */
-public class BankAccount implements Account {
+public class BankAccount extends AccountManager implements Account {
 
     // BankAccount properties: These properties will be shared with the savings 
     // account class and will only be declared within this super class.
@@ -19,9 +19,10 @@ public class BankAccount implements Account {
     private double accountBalance;          // acount balance
     private static double interestRate;     // interest rate
 
-    // Constructor
+    // Constructor calls the abstract superclass constructor.
     public BankAccount(int accountID, String lastName, String firstName,
-            double accountBalance) {
+            double accountBalance, Account account) {
+        super(account);
         this.accountID = accountID;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -30,7 +31,9 @@ public class BankAccount implements Account {
 
     // Accessor & Mutator Methods: These include the 3 methods found in the 
     // Account interface
-    public void deposit(double amount) {
+    // Setting the deposit and withdrawl methods to final, so they cannot be
+    // overridden within the SavingsAccount sub-class.
+    public final void deposit(double amount) {
         accountBalance = accountBalance + amount;
     }
 
@@ -83,7 +86,9 @@ public class BankAccount implements Account {
         return accountBalance;
     }
 
-    public void setAccountBalance(double accountBalance) {
+    // Setting this method as final, so it cannot be overridden within the 
+    // SavingsAccount sub-class.
+    public final void setAccountBalance(double accountBalance) {
         if (accountBalance > 0) {
             this.accountBalance = accountBalance;
         } else {
