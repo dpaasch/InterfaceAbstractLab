@@ -96,11 +96,11 @@ public class BankAccount extends AccountManager implements Account {
         }
     }
 
-    public static double getInterestRate() {
+    public double getInterestRate() {
         return interestRate;
     }
 
-    public static void setInterestRate(double interestRate) {
+    public void setInterestRate(double interestRate) {
         BankAccount.interestRate = interestRate;
     }
 }
