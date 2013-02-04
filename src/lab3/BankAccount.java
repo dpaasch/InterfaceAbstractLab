@@ -11,22 +11,17 @@ import java.text.DecimalFormat;
  *
  * @author Dawn Bykowski
  */
-public abstract class BankAccount implements Account {
+public abstract class BankAccount extends AccountManager implements Account {
 
-    // BankAccount properties: These properties will be shared with the savings 
-    // account class and will only be declared within this super class.
-    private int accountID;                  // account number
-    private String lastName;                // account owner last name  
-    private String firstName;               // account owner first name
+    // These properties will be inherited by the sub-classes and will be defined
+    // here.
     private double accountBalance;          // acount balance
     private static double interestRate;     // interest rate
 
     // Constructor calls the abstract superclass constructor.
-    public BankAccount(int accountID, String lastName, String firstName,
-            double accountBalance) {
-        this.accountID = accountID;
-        this.lastName = lastName;
-        this.firstName = firstName;
+    public BankAccount(double accountBalance, int accountID, String lastName, 
+            String firstName) {
+        super(accountID, lastName, firstName);
         this.accountBalance = accountBalance;
     }
 

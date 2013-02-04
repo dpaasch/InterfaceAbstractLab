@@ -11,24 +11,27 @@ package lab3;
  */
 public abstract class AccountManager {
 
-    private Account account;
-
-    // Get an account object.  
-    public AccountManager(Account account) {
-        this.account = account;
+    // AccountManager properties: These properties will be shared with the 
+    // BankAccount and SavingsAccount classes.  Therefore, these properties will
+    // be defined here only.
+    private int accountID;                  // account number
+    private String lastName;                // account owner last name  
+    private String firstName;               // account owner first name
+    
+    // Constructor: Accepts accountID, lastName, firstName which is common to 
+    // any type of account
+    public AccountManager(int accountID, String lastName, String firstName) {
+        this.accountID = accountID;
+        this.lastName = lastName;
+        this.firstName = firstName;
     }
-
-    // Accessors & mutators:
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        account.getAccountID();
-        this.account = account;
-    }
-
+    
+    // Method: toString() shows the state of the object
+    @Override
     public String toString() {
-        return this.account.toString();
+        String accountManagerString = "Account ID: " + accountID
+                + "\nAccount Last Name: " + lastName
+                + "\nAccount First Name: " + firstName;
+        return accountManagerString;      
     }
 }
